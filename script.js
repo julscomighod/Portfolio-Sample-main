@@ -4,6 +4,12 @@
 const navLinks = document.querySelectorAll('nav ul li a');
 const sections = document.querySelectorAll('section');
 
+// JavaScript to toggle the navigation menu for mobile view
+function toggleMenu() {
+    const navLinks = document.getElementById("nav-links");
+    navLinks.classList.toggle("show");
+}
+
 // Function to trigger animations on section
 function activateSection(section) {
     section.classList.add('active');
