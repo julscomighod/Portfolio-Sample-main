@@ -1,4 +1,13 @@
-// JavaScript to handle section visibility and animations
+function toggleMenu() {
+    const navLinks = document.getElementById("nav-links");
+    const hamburger = document.getElementById("hamburger");
+    
+    // Toggle the display of the navigation links
+    navLinks.classList.toggle("show");
+    
+    // Toggle the active class for the hamburger icon (animate it)
+    hamburger.classList.toggle("active");
+}
 
 // Get all the navigation links and sections
 const navLinks = document.querySelectorAll('nav ul li a');
@@ -37,6 +46,11 @@ navLinks.forEach(link => {
             resetSection(section); // Reset all sections
         });
         activateSection(targetSection); // Trigger animation for clicked section
+
+        // Close the mobile menu after click (if mobile view)
+        if (window.innerWidth <= 768) {
+            toggleMenu(); // Close the menu by toggling the hamburger state
+        }
     });
 });
 

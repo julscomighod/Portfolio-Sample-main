@@ -350,7 +350,7 @@ nav ul#nav-links {
 
 /* Styles for Hamburger Menu */
 .hamburger-menu {
-    display: none; /* Hidden by default */
+    display: none;
     flex-direction: column;
     justify-content: space-between;
     width: 30px;
@@ -358,7 +358,16 @@ nav ul#nav-links {
     cursor: pointer;
     position: absolute;
     right: 3%;
-    top: 10px;
+    top: 15px;
+    z-index: 100;
+}
+
+.hamburger-menu .bar {
+    background-color: white;
+    height: 4px;
+    width: 100%;
+    border-radius: 2px;
+    transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
 .hamburger-menu span {
@@ -368,34 +377,57 @@ nav ul#nav-links {
     border-radius: 2px;
 }
 
+/* Hamburger Icon Active (when clicked) */
+.hamburger-menu.active .bar:nth-child(1) {
+    transform: rotate(45deg);
+    position: relative;
+    top: 7px;
+}
+
+.hamburger-menu.active .bar:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger-menu.active .bar:nth-child(3) {
+    transform: rotate(-45deg);
+    position: relative;
+    top: -7px;
+}
+
 /* Media Query for smaller screens */
 @media screen and (max-width: 768px) {
     nav ul {
-        display: none;  /* Hide links on mobile */
+        display: none;
         flex-direction: column;
         align-items: center;
-        width: 100%;
         background-color: #333;
         position: absolute;
-        top: 60px; /* Adjust this value to position below the navbar */
+        top: 60px;
         left: 0;
+        width: 100%;
+        padding: 20px 0;
+        transition: max-height 0.3s ease-out;
+        max-height: 0;
+        overflow: hidden;
         z-index: 9999;
     }
 
-    nav ul#nav-links.show {
-        display: flex;  /* Show links when the menu is toggled */
-    }
-
-    .hamburger-menu {
-        display: flex; /* Show hamburger menu icon */
+    nav ul.show {
+        display: flex;
+        max-height: 500px;
     }
 
     nav ul li {
-        margin: 15px 0; /* Space out links for mobile */
+        margin: 15px 0;
     }
 
     nav ul li a {
-        font-size: 1.5rem; /* Adjust link size for better readability on mobile */
+        font-size: 1.5rem;
+        color: white;
+    }
+
+    .hamburger-menu {
+        display: flex;
     }
 }
 
