@@ -1,0 +1,374 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* Body styles */
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 3.8;
+    color: #333;
+    background-color: #f4f4f4;
+    font-size: smaller;
+}
+
+/* Header and Navigation Bar */
+header {
+    background: #333;
+    padding: 10px 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* shadow visibility */
+}
+
+nav .logo img {
+    height: 55px; 
+    width: auto; 
+    margin-left: 1%;
+}
+
+nav ul {
+    display: flex;
+    justify-content: right;
+    list-style: none;
+    margin-right: 3%;
+}
+
+nav ul li {
+    margin: 0 30px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.0em;
+    text-transform: uppercase; 
+    letter-spacing: 1px; 
+    transition: color 0.3s ease, transform 0.3s ease; /* Smooth color and transform transition */
+}
+
+nav ul li a:hover {
+    color: #ff6347; 
+    transform: scale(1.1); /* Slight scaling effect */
+}
+
+/* Section Animations */
+section {
+    opacity: 0; /* Start hidden */
+    transform: translateY(20px);  /* Start slightly below */
+    transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+/* Class to add when section is active (visible) */
+section.active {
+    opacity: 1;
+    transform: translateY(0);  /* Move into place */
+}
+
+/* Hero Section */
+.hero {
+    height: 100vh;
+    background: linear-gradient(to bottom, #0f0c29, #3b5986, #24243e);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+    animation: fadeIn 2s ease-out;
+}
+
+/* Keyframes for fadeIn */
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+/* Keyframes for fadeInUp animation */
+@keyframes fadeInUp {
+    0% { opacity: 0; transform: translateY(20px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+/* Add specific styles for other sections */
+.about, .projects, .contact {
+    padding: 60px 20px;
+    background-color: #fff;
+    text-align: center;
+}
+
+/* Animation for text */
+.hero h1, .hero p {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: slideInUp 1s forwards;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    animation-delay: 0.5s; 
+}
+
+.hero p {
+    font-size: 1.5rem;
+    animation-delay: 1s; /* Delay for p */
+}
+
+/* Keyframes for text animation */
+@keyframes slideInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* For the fadeIn animation in the hero section */
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+/* About Section */
+.about {
+    padding: 60px 20px;
+    background: #f4f4f4;
+    text-align: center;
+    opacity: 0;  /* Start hidden */
+    transform: translateY(20px);  /* Start offset */
+    animation: fadeInUp 1s forwards;  /* Apply fade-in animation */
+    animation-delay: 0.3s;  /* Delay the start of the animation */
+}
+
+.about h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    opacity: 0;
+    transform: translateY(20px);  /* Start hidden and shifted */
+    animation: fadeInUp 1s forwards;
+    animation-delay: 0.5s;  
+}
+
+.about p {
+    font-size: 1.2rem;
+    max-width: 800px;
+    margin: 0 auto;
+    opacity: 0;
+    transform: translateY(20px);  /* Start hidden and shifted */
+    animation: fadeInUp 1s forwards;
+    animation-delay: 0.8s;  /* Delay for p */
+}
+
+/* Keyframes for fadeInUp animation */
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);  /* Element starts below */
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);  /* Element moves into place */
+    }
+}
+
+/* Projects Section */
+.projects {
+    padding: 60px 20px;
+    background: #f0f0f0;
+    text-align: center;
+}
+
+.projects h2 {
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+}
+
+.project-card {
+    display: inline-block;
+    width: 250px;
+    margin: 20px;
+    background: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 1s ease forwards;
+}
+
+.project-card:nth-child(1) {
+    animation-delay: 0.2s;
+}
+
+.project-card:nth-child(2) {
+    animation-delay: 0.4s;
+}
+
+.project-card:nth-child(3) {
+    animation-delay: 0.6s;
+}
+
+.project-image {
+    height: 200px; 
+    background-color: #ccc; 
+    overflow: hidden; /* Ensures that the image does not overflow */
+    position: relative;
+}
+
+.project-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+    object-position: center; 
+}
+
+.project-card h3 {
+    font-size: 1.5rem;
+    padding: 15px;
+}
+
+.project-card p {
+    padding: 0 15px 15px;
+    font-size: 1rem;
+    color: #555;
+}
+
+/* Contact Section */
+.contact {
+    padding: 60px 20px;
+    background: #fff;
+    text-align: center;
+}
+
+.contact form {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.contact input, .contact textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.contact button {
+    padding: 12px 20px;
+    background-color: #ff6347;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.contact button:hover {
+    background-color: #e0533a;
+}
+
+/* Footer */
+footer {
+    background: #333;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    margin-top: 5px;
+}
+
+/* Social Icons */
+.social-links {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.social-icon {
+    margin: 0 15px;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.social-icon img {
+    width: 40px;
+    height: 40px;
+    filter: grayscale(100%);
+    transition: filter 0.3s ease;
+}
+
+.social-icon:hover img {
+    filter: grayscale(0);
+    transform: scale(1.1);
+}
+
+/* Animation for social icons */
+.social-icon {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 1s forwards;
+}
+
+.social-icon:nth-child(1) {
+    animation-delay: 0.5s;
+}
+
+.social-icon:nth-child(2) {
+    animation-delay: 0.7s;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+@keyframes fadeInUp {
+    0% { opacity: 0; transform: translateY(20px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+/* Media Queries for responsiveness */
+@media screen and (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .project-card {
+        width: 80%;
+        margin: 10px auto;
+    }
+
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .hero p {
+        font-size: 1.2rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .hero h1 {
+        font-size: 1.5rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+
+    .project-card {
+        width: 100%;
+    }
+}

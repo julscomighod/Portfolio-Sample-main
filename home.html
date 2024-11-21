@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Juls</title>
+    <link rel="stylesheet" href="HomeStyles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <header>
+        <nav>
+            <div class="logo">
+                <img src="logo2.png" alt="Logo" style="float: left;" />
+            </div>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Welcome to My Portfolio</h1>
+            <p>I'm a web developer passionate about creating modern websites</p>
+        </div>
+    </section>
+    
+    <!-- About Section -->
+    <section id="about" class="about">
+        <h2>About Me</h2>
+        <p>Hello! I'm a front-end developer with a strong focus on UI/UX and web development. I love learning new technologies and am always excited to take on new challenges.</p>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+        <h2>My Projects</h2>
+    
+        <!-- Project 1 -->
+        <div class="project-card">
+            <div class="project-image">
+                <img src="catboom.png" alt="Project 1 Image" />
+            </div>
+            <h3>Project 1</h3>
+            <p>Project description goes here.</p>
+        </div>
+    
+        <!-- Project 2 -->
+        <div class="project-card">
+            <div class="project-image">
+                <img src="catboom2.png" alt="Project 2 Image" />
+            </div>
+            <h3>Project 2</h3>
+            <p>Project description goes here.</p>
+        </div>
+    
+        <!-- Project 3 -->
+        <div class="project-card">
+            <div class="project-image">
+                <img src="catboom3.png" alt="Project 3 Image" />
+            </div>
+            <h3>Project 3</h3>
+            <p>Project description goes here.</p>
+        </div>
+    </section>    
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <h2>Contact</h2>
+        <form id="contactForm" onsubmit="sendEmail(event)">
+            <input id="name" name="name" type="text" placeholder="Your Name" required>
+            <input id="email" name="email" type="email" placeholder="Your Email" required>
+            <textarea id="message" name="message" placeholder="Your Message" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+    </section>
+
+    <!-- Footer -->
+<footer>
+    <!-- <p>© 2024 My Portfolio. All rights reserved.</p> -->
+    <div class="social-links">
+        <a href="https://www.facebook.com/juls.comighod" class="social-icon" target="_blank">
+            <img src="facebook.png" alt="Facebook" />
+        </a>
+        <a href="https://www.instagram.com/julscomighod/" class="social-icon" target="_blank">
+            <img src="instagram.png" alt="Instagram" />
+        </a>
+    </div>
+</footer>
+
+    <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
